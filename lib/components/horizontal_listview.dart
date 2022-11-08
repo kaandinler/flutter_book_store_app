@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HorizontalListViewWidget extends StatefulWidget {
   const HorizontalListViewWidget({super.key});
@@ -22,9 +20,13 @@ class _HorizontalListViewWidgetState extends State<HorizontalListViewWidget> {
         children: [
           Container(
             margin: const EdgeInsets.all(10.0),
-            child: Image.network(
-              "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
-              fit: BoxFit.cover,
+            child: SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: Image.network(
+                "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(

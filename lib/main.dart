@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book_store_app/screens/home_screen.dart';
 import 'package:flutter_book_store_app/shared/margins.dart';
-import 'package:flutter_book_store_app/widget/horizontal_listview.dart';
-import 'package:flutter_book_store_app/widget/slider_widget.dart';
+import 'package:flutter_book_store_app/components/horizontal_listview.dart';
+import 'package:flutter_book_store_app/components/slider_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,20 +34,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        margin: const EdgeInsets.only(top: 30.0),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              MySliderWidget(),
-              verticalSpaceSmall,
-              HorizontalListViewWidget(),
-            ]),
-      ),
+    return MaterialApp(
+      home: HomeScreen(),
     );
   }
 }
