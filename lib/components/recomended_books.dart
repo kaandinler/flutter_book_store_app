@@ -41,23 +41,26 @@ class RecomendedBook extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    RichText(
-                        text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: "$title",
-                            style: TextStyle(
-                                color: kTextColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold)),
-                        TextSpan(
-                            text: "\n$author",
-                            style: TextStyle(
-                              color: kTextColor,
-                              fontSize: 16,
-                            )),
-                      ],
-                    )),
+                    Expanded(
+                      child: RichText(
+                          overflow: TextOverflow.ellipsis,
+                          text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: "$title",
+                                  style: TextStyle(
+                                      color: kTextColor,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: "\n$author",
+                                  style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize: 16,
+                                  )),
+                            ],
+                          )),
+                    ),
                   ],
                 )),
           ),

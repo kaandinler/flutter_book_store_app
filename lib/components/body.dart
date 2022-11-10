@@ -71,6 +71,27 @@ class Body extends StatelessWidget {
               ],
             ),
           ),
+          MoreBtnWithCustomTitle(
+              title: 'Trending', moreBtn: 'More', press: () {}),
+          SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: [
+                RecomendedBook(
+                  author: 'Alexandra Bracken',
+                  title: 'The Darkest Minds',
+                  image: 'assets/images/darkest_minds.jpeg',
+                ),
+                RecomendedBook(
+                  author: 'Paulo Coelho',
+                  title: 'Veronika Ölmek İstiyor',
+                  image: 'assets/images/veronika.jpeg',
+                ),
+                RecomendedBook(
+                  author: 'Jose Saramago',
+                  title: 'Körlük',
+                  image: 'assets/images/korluk.jpeg',
+                ),
+              ]))
         ],
       ),
     );
