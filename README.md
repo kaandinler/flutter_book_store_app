@@ -6,7 +6,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Simulator Screen Shot - iPhone 14 Pro Max - 2022-11-10 at 12 48 02](https://user-images.githubusercontent.com/19665296/201058087-a10d2ada-9aa5-4e3d-bb92-1d9532e23ca1.png)
+![Simulator Screen Shot - iPhone 14 Pro Max - 2022-11-10 at 12 48 02](https://user-images.githubusercontent.com/19665296/201058087-a10d2ada-9aa5-4e3d-bb92-1d9532e23ca1.png=480x640)
 
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2022-11-10 at 12 48 14](https://user-images.githubusercontent.com/19665296/201058140-af8e637a-03dd-43d0-8e74-09f6856392b0.png)
 
