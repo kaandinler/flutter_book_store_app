@@ -27,6 +27,7 @@ class Body extends StatelessWidget {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             child: Row(
               children: const [
                 RecomendedBook(
@@ -57,6 +58,7 @@ class Body extends StatelessWidget {
             moreBtn: "More",
           ),
           SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Row(
               children: const [
@@ -75,8 +77,9 @@ class Body extends StatelessWidget {
           MoreBtnWithCustomTitle(
               title: 'Trending', moreBtn: 'More', press: () {}),
           SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              child: Row(children: [
+              child: Row(children: const [
                 RecomendedBook(
                   author: 'Alexandra Bracken',
                   title: 'The Darkest Minds',
