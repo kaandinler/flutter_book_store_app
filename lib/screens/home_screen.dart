@@ -9,18 +9,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar(),
-      body: Body(),
+      appBar: BuildAppBar(context),
+      body: const Body(),
     );
   }
 
-  AppBar BuildAppBar() {
+  AppBar BuildAppBar(BuildContext _context) {
     return AppBar(
       elevation: 0,
       backgroundColor: kPrimaryColor,
       leading: IconButton(
         icon: const Icon(Icons.menu),
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(_context).openDrawer();
+        },
+        tooltip: MaterialLocalizations.of(_context).openAppDrawerTooltip,
       ),
     );
   }
