@@ -16,22 +16,24 @@ class RecomendedAuthors extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(
-        left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding,
+          horizontal: kDefaultPadding / 2,
         ),
         child: GestureDetector(
           onTap: () {},
           child: Column(
             children: [
               CircleAvatar(
-                radius: 70,
+                radius: 50,
                 backgroundImage: AssetImage('$image'),
+              ),
+              SizedBox(
+                height: 10,
               ),
               Text('$author',
                   overflow: TextOverflow.ellipsis,

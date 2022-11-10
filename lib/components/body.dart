@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
+              children: const [
                 RecomendedBook(
                   author: 'Ray Bradbury',
                   title: 'Fahrenheit 451',
@@ -59,15 +59,16 @@ class Body extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
+              children: const [
                 RecomendedAuthors(
-                    author: 'George Orwell', image: 'assets/images/1984.jpeg'),
+                    author: 'George Orwell',
+                    image: 'assets/images/George_Orwell.jpg'),
                 RecomendedAuthors(
                     author: 'David Eagleman',
-                    image: 'assets/images/incognito.jpeg'),
+                    image: 'assets/images/david_eagleman.jpg'),
                 RecomendedAuthors(
                     author: 'Ray Bradbury',
-                    image: 'assets/images/fahrenheit451.jpeg'),
+                    image: 'assets/images/Ray_Bradbury.jpg'),
               ],
             ),
           ),
