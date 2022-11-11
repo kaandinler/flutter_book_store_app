@@ -17,17 +17,30 @@ class RecomendedBook extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 10),
+            blurRadius: 50,
+            color: kPrimaryColor.withOpacity(0.23),
+          ),
+        ],
+      ),
       margin: EdgeInsets.only(
         left: kDefaultPadding,
-        top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
       child: Column(
         children: [
           Image(
+            alignment: Alignment.topCenter,
             image: AssetImage('$image'),
             fit: BoxFit.cover,
+            repeat: ImageRepeat.noRepeat,
+            semanticLabel: 'Book Image',
           ),
           GestureDetector(
             onTap: () {},

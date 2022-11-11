@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_book_store_app/components/bottom_navbar.dart';
 import 'package:flutter_book_store_app/components/more_btn_with_custom_title.dart';
 import 'package:flutter_book_store_app/components/recomended_authors.dart';
 import 'package:flutter_book_store_app/components/recomended_books.dart';
@@ -77,25 +78,26 @@ class Body extends StatelessWidget {
           MoreBtnWithCustomTitle(
               title: 'Trending', moreBtn: 'More', press: () {}),
           SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              child: Row(children: const [
-                RecomendedBook(
-                  author: 'Alexandra Bracken',
-                  title: 'The Darkest Minds',
-                  image: 'assets/images/darkest_minds.jpeg',
-                ),
-                RecomendedBook(
-                  author: 'Paulo Coelho',
-                  title: 'Veronika Ölmek İstiyor',
-                  image: 'assets/images/veronika.jpeg',
-                ),
-                RecomendedBook(
-                  author: 'Jose Saramago',
-                  title: 'Körlük',
-                  image: 'assets/images/korluk.jpeg',
-                ),
-              ]))
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const [
+              RecomendedBook(
+                author: 'Alexandra Bracken',
+                title: 'The Darkest Minds',
+                image: 'assets/images/darkest_minds.jpeg',
+              ),
+              RecomendedBook(
+                author: 'Paulo Coelho',
+                title: 'Veronika Ölmek İstiyor',
+                image: 'assets/images/veronika.jpeg',
+              ),
+              RecomendedBook(
+                author: 'Jose Saramago',
+                title: 'Körlük',
+                image: 'assets/images/korluk.jpeg',
+              ),
+            ]),
+          ),
         ],
       ),
     );
