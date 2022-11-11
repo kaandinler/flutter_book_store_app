@@ -7,11 +7,13 @@ class RecomendedBook extends StatelessWidget {
     required this.image,
     required this.title,
     required this.author,
+    required this.press,
   }) : super(key: key);
 
   final String image;
   final String title;
   final String author;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class RecomendedBook extends StatelessWidget {
             semanticLabel: 'Book Image',
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: press as void Function()?,
             child: Container(
                 padding: EdgeInsets.all(kDefaultPadding / 2),
                 decoration: BoxDecoration(

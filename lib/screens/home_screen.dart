@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_store_app/components/body.dart';
-import 'package:flutter_book_store_app/components/bottom_navbar.dart';
+import 'package:flutter_book_store_app/screens/home/components/body.dart';
+import 'package:flutter_book_store_app/screens/home/components/bottom_navbar.dart';
 import 'package:flutter_book_store_app/shared/constants.dart';
 
 class HomeScreen extends StatefulWidget {

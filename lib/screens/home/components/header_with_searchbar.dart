@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../shared/constants.dart';
-import '../shared/margins.dart';
+import '../../../shared/constants.dart';
+import '../../../shared/margins.dart';
 
 class HeaderWithSearchBar extends StatelessWidget {
   const HeaderWithSearchBar({
