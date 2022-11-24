@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book_store_app/shared/constants.dart';
 
+import '../../categories/category_screen.dart';
+
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({
     Key? key,
@@ -9,11 +11,11 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
           left: kDefaultPadding * 2,
           right: kDefaultPadding * 2,
           bottom: kDefaultPadding),
-      height: 50,
+      height: 80,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -39,7 +41,12 @@ class MyBottomNavBar extends StatelessWidget {
         ),
         IconButton(
           icon: Icon(Icons.category_outlined),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CategoriesScreen()),
+            );
+          },
         ),
       ]),
     );
