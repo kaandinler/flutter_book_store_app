@@ -40,21 +40,25 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                  child: TextButton(
-                onPressed: () {},
-                child:
-                    Text('Description', style: TextStyle(color: kPrimaryColor)),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  textStyle: const TextStyle(fontSize: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
+              SizedBox(
+                height: 84,
+                width: size.width / 2,
+                child: Expanded(
+                    child: TextButton(
+                  onPressed: () {},
+                  child: Text('Description',
+                      style: TextStyle(color: kPrimaryColor)),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    textStyle: const TextStyle(fontSize: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                      ),
                     ),
                   ),
-                ),
-              ))
+                )),
+              )
             ],
           )
         ],

@@ -16,17 +16,77 @@ class CategoriesScreen extends StatelessWidget {
           title: const Text('Book Categories'),
           backgroundColor: kPrimaryColor,
         ),
-        body: SingleChildScrollView(
+        body: CustomScrollView(
+          primary: false,
           scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              CategoryOption(),
-              CategoryOption(),
-              CategoryOption(),
-              CategoryOption(),
-              CategoryOption(),
-            ],
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.all(20),
+              sliver: SliverGrid.count(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 3,
+                children: [
+                  CategoryGridTile(
+                    category_name: 'Academic',
+                    image: 'assets/images/A.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Art',
+                    image: 'assets/images/A.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Education',
+                    image: 'assets/images/E.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Engineering',
+                    image: 'assets/images/E.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Literature',
+                    image: 'assets/images/L.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Science',
+                    image: 'assets/images/S.jpg',
+                  ),
+                  CategoryGridTile(
+                    category_name: 'Sports',
+                    image: 'assets/images/S.jpg',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ));
+  }
+}
+
+class CategoryGridTile extends StatelessWidget {
+  const CategoryGridTile({
+    super.key,
+    required this.category_name,
+    required this.image,
+  });
+
+  final String category_name;
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridTile(
+        footer: Container(
+          color: Colors.black54,
+          alignment: Alignment.center,
+          child: Text(
+            '$category_name',
+            style: TextStyle(
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
           ),
+        ),
+        child: CategoryOption(
+          image: '$image',
         ));
   }
 }
@@ -34,63 +94,33 @@ class CategoriesScreen extends StatelessWidget {
 class CategoryOption extends StatelessWidget {
   const CategoryOption({
     Key? key,
+    required this.image,
   }) : super(key: key);
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
-      child: Column(
-        children: [
-          Container(
-              margin: const EdgeInsets.only(top: 20, left: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0, -15),
-                    blurRadius: 20,
-                    color: kPrimaryColor.withOpacity(0.23),
-                  ),
-                ],
-              ),
-              height: 100,
-              width: kDefaultPadding * 8,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                      // Image border
-                      child: SizedBox.fromSize(
-                        size: Size.fromRadius(80), // Image radius
-                        child: Image(
-                          fit: BoxFit.cover,
-                          image: const AssetImage(
-                              'assets/images/fahrenheit451.jpeg'),
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    RichText(
-                        text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Computer'.toUpperCase(),
-                          style: Theme.of(context).textTheme.button,
-                        ),
-                      ],
-                    ))
-                  ],
-                ),
-              ))
-        ],
-      ),
-    );
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, -15),
+              blurRadius: 20,
+              color: kPrimaryColor.withOpacity(0.23),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+          child: Image.asset(
+            image,
+            fit: BoxFit.cover,
+          ),
+        ));
   }
 }
